@@ -30,6 +30,21 @@ app.post('/player', (req, res) => {
     })
 })
 
+app.patch('/player', (req, res) => {
+  const { name } = req.body
+  const sql = `UPDATE players
+               SET wins = wins + 1
+               WHERE name = ?`
+
+  db.run(sql, [name], (err) => {
+    if (err) {
+      return console.error(err.message)
+    }
+    res.send(this)
+  })
+})
+
+
 app.get('/players', (req, res) => {
   const sql = `SELECT * FROM players`
   db.all(sql, [], (err, rows) => {
