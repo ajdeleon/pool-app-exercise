@@ -10,7 +10,9 @@ function App() {
 
   return (
     <div className="app">
-      <header className="app__header">Pool Scoreboard</header>
+      <header className="app__header">
+        <h2>Pool Scoreboard</h2>
+      </header>
       <main>
         <section className="create-player__section">
           <CreatePlayerInput players={players} handleUpdate={updateData} />
