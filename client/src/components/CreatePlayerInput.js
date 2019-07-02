@@ -16,7 +16,7 @@ const CreatePlayerInput = (props) => {
 
     try {
       await axios.post('http://localhost:4000/player', {
-        "name": createPlayerInput
+        "name": createPlayerInput.toUpperCase()
       })
     } catch (err) {
       console.log(err.message)
