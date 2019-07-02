@@ -1,42 +1,32 @@
-import React, { useState, useReducer } from 'react'
+import React from 'react'
 import './App.css'
 
+import usePlayerApi from './hooks/usePlayerApi'
+import CreatePlayerInput from './components/CreatePlayerInput'
+import PlayerSelectContainer from './components/PlayerSelectContainer'
+
 function App() {
-  const initialState = {
-    players: [],
-    currentPlayerOne: '',
-    currentPlayerTwo: ''
-  }
+  const [{ players, isLoading, isError }, updateData] = usePlayerApi()
 
-  const playerReducer = (state, action) => {
-    switch (action.type) {
-      default:
-        return {...state}
-    }
-  }
-
-  const [createPlayerInput, setCreatePlayerInput] = useState('')
-  const [state, dispatch] = useReducer(playerReducer, initialState)
-  
   return (
     <div className="app">
       <header className="app__header">Pool Scoreboard</header>
       <main>
         <section className="create-player__section">
-          <form>
-            <label htmlFor="create-player__input">Create a player</label>
-            <input
-              type="text"
-              name="create-player__input"
-              value={createPlayerInput}
-              onChange={e => setCreatePlayerInput(e.target.value)}
-            />
-            <input type="submit" value="Submit" />
-          </form>
+          <CreatePlayerInput players={players} handleUpdate={updateData} />
         </section>
         <section className="player-select__section">
-          <select><option>Player 1</option></select>
-          <select><option>Player 2</option></select>
+          <PlayerSelectContainer players={players} />
+        </section>
+        <section>
+          <h3>Leaderboard</h3>
+          {
+            isError ? 'There was an error loading the data. Please try to refresh the page.' : (
+              <ul className="leaderboard__list">
+                {isLoading ? '...loading' : players.map(player => <li key={player.name}>{player.name} - {player.wins}</li>)}
+              </ul>
+            )
+          }
         </section>
       </main>
     </div>
