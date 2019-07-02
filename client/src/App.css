@@ -1,0 +1,13 @@
+.app {
+  text-align: center;
+}
+
+.app__header {
+  margin: 1rem;
+  height: 2rem;
+}
+
+.player-select__section {
+  display: flex;
+  justify-content: space-around;
+}
