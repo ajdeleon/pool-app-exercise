@@ -27,6 +27,7 @@ const PlayerSelectContainer = (props) => {
       <select
         onChange={e => setCurrentPlayerOne(e.target.value)}
         value={currentPlayerOne || 'player_one'}
+        tabIndex="2"
       >
         <option disabled value="player_one">
           Player 1
@@ -41,12 +42,13 @@ const PlayerSelectContainer = (props) => {
             )
           })}
       </select>
-      <button onClick={() => incrementPlayerScore(currentPlayerOne)}>Player 1 wins!</button>
+      <button tabIndex="3" onClick={() => incrementPlayerScore(currentPlayerOne)}>Player 1 wins!</button>
     </div>
     <div>
       <select
         onChange={e => setCurrentPlayerTwo(e.target.value)}
         value={currentPlayerTwo || 'player_two'}
+        tabIndex="2"
       >
         <option disabled value="player_two">
           Player 2
@@ -61,7 +63,7 @@ const PlayerSelectContainer = (props) => {
             )
           })}
       </select>
-      <button onClick={() => incrementPlayerScore(currentPlayerTwo)}>Player 2 wins!</button>
+      <button tabIndex="3" onClick={() => incrementPlayerScore(currentPlayerTwo)}>Player 2 wins!</button>
     </div>
     </>
   )

@@ -29,15 +29,18 @@ const CreatePlayerInput = (props) => {
   
   return (
 
-    <form onSubmit={(e) => createPlayer(e)}>
+    <form 
+      onSubmit={(e) => createPlayer(e)}
+    >
       <label htmlFor="create-player__input">Create a player</label>
       <input
+        tabIndex="1"
         type="text"
         name="create-player__input"
         value={createPlayerInput}
         onChange={e => setCreatePlayerInput(e.target.value)}
       />
-      <input type="submit" value="Submit" />
+      <input tabIndex="1" type="submit" value="Submit" />
     </form>
   )
 }
