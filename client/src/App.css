@@ -11,3 +11,8 @@
   display: flex;
   justify-content: space-around;
 }
+
+.leaderboard__list {
+  padding: 0;
+  list-style: none;
+}
