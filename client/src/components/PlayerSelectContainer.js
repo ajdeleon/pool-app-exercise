@@ -10,8 +10,11 @@ const PlayerSelectContainer = (props) => {
       alert('Please select two players')
       return
     }
-
-    await axios.patch('http://localhost:4000/player', { "name": player })
+    try {
+      await axios.patch('http://localhost:4000/player', { "name": player })
+    } catch (err) {
+      console.error(err.message)
+    }
     
     props.handleUpdate(player)
     setCurrentPlayerOne('')

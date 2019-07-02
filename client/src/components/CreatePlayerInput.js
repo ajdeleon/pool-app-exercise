@@ -11,11 +11,17 @@ const CreatePlayerInput = (props) => {
       e.preventDefault()
       return
     }
+
     e.preventDefault()
 
-    await axios.post('http://localhost:4000/player', {
-      "name": createPlayerInput
-    })
+    try {
+      await axios.post('http://localhost:4000/player', {
+        "name": createPlayerInput
+      })
+    } catch (err) {
+      console.log(err.message)
+    }
+
     props.handleUpdate(createPlayerInput)
     
     setCreatePlayerInput('')
