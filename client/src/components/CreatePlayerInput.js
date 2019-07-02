@@ -4,21 +4,21 @@ import axios from 'axios'
 const CreatePlayerInput = (props) => {
   const [createPlayerInput, setCreatePlayerInput] = useState('')
 
-  const createPlayer = (e) => {
+  const createPlayer = async e => {
     // return early if duplicate so player.name can be used as a unique key
     if (props.players.map(p => p.name).includes(createPlayerInput)) {
       alert('Player already exists, please choose another name')
       e.preventDefault()
       return
     }
+    e.preventDefault()
 
-    axios.post('http://localhost:4000/player', {
+    await axios.post('http://localhost:4000/player', {
       "name": createPlayerInput
     })
-    e.preventDefault()
+    props.handleUpdate(createPlayerInput)
     
     setCreatePlayerInput('')
-    props.handleUpdate(createPlayerInput)
   }
   
   return (
