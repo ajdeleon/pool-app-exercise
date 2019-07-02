@@ -16,14 +16,16 @@ function App() {
           <CreatePlayerInput players={players} handleUpdate={updateData} />
         </section>
         <section className="player-select__section">
-          <PlayerSelectContainer players={players} />
+          <PlayerSelectContainer players={players} handleUpdate={updateData}  />
         </section>
         <section>
           <h3>Leaderboard</h3>
           {
             isError ? 'There was an error loading the data. Please try to refresh the page.' : (
               <ul className="leaderboard__list">
-                {isLoading ? '...loading' : players.map(player => <li key={player.name}>{player.name} - {player.wins}</li>)}
+                {isLoading ? '...loading' : players
+                    .sort((a, b) => b.wins - a.wins)
+                    .map(player => <li key={player.name}>{player.name} - {player.wins}</li>)}
               </ul>
             )
           }
