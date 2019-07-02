@@ -44,6 +44,17 @@ app.patch('/player', (req, res) => {
   })
 })
 
+app.delete('/player', (req, res) => {
+  const { name } = req.body
+  const sql = `DELETE from players WHERE name = ?`
+  db.run(sql, [name], (err) => {
+    if (err) {
+      return console.error(err.message)
+    }
+    res.send(this)
+  })
+})
+
 
 app.get('/players', (req, res) => {
   const sql = `SELECT * FROM players`
@@ -53,6 +64,15 @@ app.get('/players', (req, res) => {
     }
 
     return res.send(rows)
+  })
+})
+
+app.delete('/players', (req, res) => {
+  db.run(`DELETE from players`, (err) => {
+    if (err) {
+      return console.error(err.message)
+    }
+    res.send('All deleted')
   })
 })
 
