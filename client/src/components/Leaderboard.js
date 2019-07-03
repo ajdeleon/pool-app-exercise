@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import axios from 'axios'
+import api from '../api'
 
 const Leaderboard = (props) => {
   const [adminOpen, setAdminOpen] = useState(false)
@@ -7,7 +7,7 @@ const Leaderboard = (props) => {
 
   const deletePlayer = async (player) => {
     try {
-      await axios.delete('http://localhost:4000/player', {  data: { "name": player } })
+      await api.delete('/player', {  data: { "name": player } })
     } catch (err) {
       console.log(err)
     }
@@ -20,7 +20,7 @@ const Leaderboard = (props) => {
     if (players.length === 0) return alert('No players to delete')
 
     try {
-      res = await axios.delete('http://localhost:4000/players')
+      res = await api.delete('/players')
     } catch (err) {
       console.log(err)
     }

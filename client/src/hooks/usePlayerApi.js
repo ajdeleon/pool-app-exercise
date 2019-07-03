@@ -1,5 +1,5 @@
 import { useState, useEffect, useReducer } from 'react'
-import axios from 'axios'
+import api from '../api.js'
 
 import { FETCH_INIT, FETCH_SUCCESS, FETCH_FAILURE } from './types'
 
@@ -34,7 +34,7 @@ const usePlayerApi = () => {
 
 
       try {
-        const res = await axios.get('http://localhost:4000/players')
+        const res = await api.get('/players')
 
         if (!didNotMount) {
           dispatch({ type: FETCH_SUCCESS, payload: res.data })

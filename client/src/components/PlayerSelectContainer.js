@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import axios from 'axios'
+import api from '../api'
 
 const PlayerSelectContainer = (props) => {
   const [ currentPlayerOne, setCurrentPlayerOne ] = useState('')
@@ -11,7 +11,7 @@ const PlayerSelectContainer = (props) => {
       return
     }
     try {
-      await axios.patch('http://localhost:4000/player', { "name": player })
+      await api.patch('/player', { "name": player })
     } catch (err) {
       console.error(err.message)
     }

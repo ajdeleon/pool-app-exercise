@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import axios from 'axios'
+import api from '../api.js'
 
 const CreatePlayerInput = (props) => {
   const [createPlayerInput, setCreatePlayerInput] = useState('')
@@ -21,7 +21,7 @@ const CreatePlayerInput = (props) => {
     e.preventDefault()
 
     try {
-      await axios.post('http://localhost:4000/player', {
+      await api.post('/player', {
         "name": createPlayerInput.toUpperCase()
       })
     } catch (err) {
