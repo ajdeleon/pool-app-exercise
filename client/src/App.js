@@ -15,12 +15,8 @@ function App() {
         <h2>Pool Scoreboard</h2>
       </header>
       <main>
-        <section className="create-player__section">
-          <CreatePlayerInput players={players} handleUpdate={updateData} />
-        </section>
-        <section className="player-select__section">
-          <PlayerSelectContainer players={players} handleUpdate={updateData}  />
-        </section>
+        <CreatePlayerInput players={players} handleUpdate={updateData} />
+        <PlayerSelectContainer players={players} handleUpdate={updateData}  />
         <Leaderboard players={players} isLoading={isLoading} isError={isError} handleUpdate={updateData} />
       </main>
     </div>

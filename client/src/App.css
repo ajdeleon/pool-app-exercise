@@ -1,18 +1,134 @@
+/* :root { */
+/*   --theme-green: #0a6c03; */
+/*   --theme-blue: #03116c; */
+/*   --theme-red: #6c030a; */
+/*   --theme-brown: #6c3403; */
+/* } */
+/* Theme colors generated with: https://www.sessions.edu/color-calculator/*/
+
 .app {
   text-align: center;
 }
 
 .app__header {
-  margin: 1rem;
+  margin: 2rem;
   height: 2rem;
+}
+
+.create-player__section {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.create-player__form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+.create-player__form input {
+  margin-top: 0.5rem;
+  border-color: var(--theme-blue, blue);
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.create-player__input--text {
+  font-size: 1rem;
+  padding: 0.5rem;
+  text-align: center;
 }
 
 .player-select__section {
   display: flex;
   justify-content: space-around;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  flex-wrap: wrap;
+}
+
+.player-select__div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  width: 250px;
+}
+
+.player__select {
+  margin-bottom: 0.5rem;
 }
 
 .leaderboard__list {
   padding: 0;
   list-style: none;
+}
+
+.button--green {
+  font-size: 1rem;
+  background-color: var(--theme-green, green);
+  color: #FFF;
+  border-radius: 4px;
+  border: none;
+  padding: 0.5rem;
+}
+
+.button--green:hover {
+  background-color: #FFF;
+  color: var(--theme-green, green);
+  border: 1px solid var(--theme-green, green);
+}
+
+.button--blue {
+  font-size: 1rem;
+  background-color: var(--theme-blue, blue);
+  color: #FFF;
+  border-radius: 4px;
+  border: none;
+  padding: 0.5rem;
+}
+
+.button--blue:hover {
+  background-color: #FFF;
+  color: var(--theme-blue, blue);
+  border: 1px solid var(--theme-blue, blue);
+}
+
+.button--red {
+  font-size: 1rem;
+  background-color: var(--theme-red, red);
+  color: #FFF;
+  border-radius: 4px;
+  border: none;
+  padding: 0.5rem;
+}
+
+.button--red:hover {
+  background-color: #FFF;
+  color: var(--theme-red, red);
+  border: 1px solid var(--theme-red, red);
+}
+
+.leaderboard__list-item--delete {
+  border: none;
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--theme-red, red)
+}
+
+.leaderboard__list-item--delete:hover {
+  color: #FFF;
+  background-color: var(--theme-red, red);
+  border-radius: 4px;
+}
+
+.player__select {
+  font-size: 1rem;
+  border-radius: 4px;
+  padding: 0.5rem;
+}
+
+.admin__button {
+  margin-top: 0.5rem;
 }

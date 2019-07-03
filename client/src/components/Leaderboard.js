@@ -31,7 +31,7 @@ const Leaderboard = (props) => {
   const renderLeaderboardList = (player) => (
     adminOpen
     ? (
-      <li key={player.name}>{player.name} - {player.wins} <button onClick={() => deletePlayer(player.name)}>X</button> </li>
+      <li key={player.name}>{player.name} - {player.wins} <button className="leaderboard__list-item--delete" onClick={() => deletePlayer(player.name)}>X</button> </li>
     )
     : <li key={player.name}>{player.name} - {player.wins}</li>
   )
@@ -39,7 +39,7 @@ const Leaderboard = (props) => {
 
   return (
     <>
-      <section>
+      <section className="leaderboard__section">
         <h3>Leaderboard</h3>
         {
           isError ? 'There was an error loading the data. Please try to refresh the page.' : (
@@ -52,10 +52,10 @@ const Leaderboard = (props) => {
             </ul>
           )
         }
-        {adminOpen && <button onClick={() => deleteAllPlayers()}>Delete All Players</button>}
+        {adminOpen && <button className="button--red" onClick={() => deleteAllPlayers()}>Delete All Players</button>}
       </section>
       <section>
-        <button onClick={() => setAdminOpen(!adminOpen)}>{adminOpen ? 'Close Admin' : 'Admin Panel'}</button>
+        <button className="admin__button button--blue" onClick={() => setAdminOpen(!adminOpen)}>{adminOpen ? 'Close Admin' : 'Admin Panel'}</button>
       </section>
     </>
   )

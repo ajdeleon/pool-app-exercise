@@ -22,50 +22,52 @@ const PlayerSelectContainer = (props) => {
   }
 
   return (
-    <>
-    <div>
-      <select
-        onChange={e => setCurrentPlayerOne(e.target.value)}
-        value={currentPlayerOne || 'player_one'}
-        tabIndex="2"
-      >
-        <option disabled value="player_one">
-          Player 1
-        </option>
-        {props.players
-          .filter(player => player.name !== currentPlayerTwo)
-          .map(player => {
-            return (
-              <option value={player.name} key={player.name}>
-                {player.name}
-              </option>
-            )
-          })}
-      </select>
-      <button tabIndex="3" onClick={() => incrementPlayerScore(currentPlayerOne)}>Player 1 wins!</button>
-    </div>
-    <div>
-      <select
-        onChange={e => setCurrentPlayerTwo(e.target.value)}
-        value={currentPlayerTwo || 'player_two'}
-        tabIndex="2"
-      >
-        <option disabled value="player_two">
-          Player 2
-        </option>
-        {props.players
-          .filter(player => player.name !== currentPlayerOne)
-          .map(player => {
-            return (
-              <option value={player.name} key={player.name}>
-                {player.name}
-              </option>
-            )
-          })}
-      </select>
-      <button tabIndex="3" onClick={() => incrementPlayerScore(currentPlayerTwo)}>Player 2 wins!</button>
-    </div>
-    </>
+    <section className="player-select__section">
+      <div className="player-select__div">
+        <select
+          className="player__select"
+          onChange={e => setCurrentPlayerOne(e.target.value)}
+          value={currentPlayerOne || 'player_one'}
+          tabIndex="2"
+        >
+          <option disabled value="player_one">
+            Player 1
+          </option>
+          {props.players
+            .filter(player => player.name !== currentPlayerTwo)
+            .map(player => {
+              return (
+                <option value={player.name} key={player.name}>
+                  {player.name}
+                </option>
+              )
+            })}
+        </select>
+        <button className="button--green" tabIndex="3" onClick={() => incrementPlayerScore(currentPlayerOne)}>Player 1 wins!</button>
+      </div>
+      <div className="player-select__div">
+        <select
+          className="player__select"
+          onChange={e => setCurrentPlayerTwo(e.target.value)}
+          value={currentPlayerTwo || 'player_two'}
+          tabIndex="2"
+        >
+          <option disabled value="player_two">
+            Player 2
+          </option>
+          {props.players
+            .filter(player => player.name !== currentPlayerOne)
+            .map(player => {
+              return (
+                <option value={player.name} key={player.name}>
+                  {player.name}
+                </option>
+              )
+            })}
+        </select>
+        <button className="button--green" tabIndex="3" onClick={() => incrementPlayerScore(currentPlayerTwo)}>Player 2 wins!</button>
+      </div>
+    </section>
   )
 }
 
