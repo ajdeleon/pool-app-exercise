@@ -1,9 +1,9 @@
-/* :root { */
-/*   --theme-green: #0a6c03; */
-/*   --theme-blue: #03116c; */
-/*   --theme-red: #6c030a; */
-/*   --theme-brown: #6c3403; */
-/* } */
+:root {
+  --theme-green: #0a6c03;
+  --theme-blue: #03116c;
+  --theme-red: #6c030a;
+  --theme-brown: #6c3403;
+}
 /* Theme colors generated with: https://www.sessions.edu/color-calculator/*/
 
 .app {
@@ -16,9 +16,9 @@
 }
 
 .create-player__section {
-  margin-bottom: 2rem;
   display: flex;
   justify-content: center;
+  margin-bottom: 2rem;
 }
 
 .create-player__form {
@@ -28,25 +28,25 @@
 }
 
 .create-player__form input {
-  margin-top: 0.5rem;
-  border-color: var(--theme-blue, blue);
-  border-width: 1px;
+  margin-top: .5rem;
   border-radius: 4px;
+  border-width: 1px;
+  border-color: var(--theme-blue, #00f);
 }
 
 .create-player__input--text {
-  font-size: 1rem;
-  padding: 0.5rem;
+  padding: .5rem;
   text-align: center;
+  font-size: 1rem;
 }
 
 .player-select__section {
   display: flex;
-  justify-content: space-around;
-  width: 75%;
-  margin-left: auto;
-  margin-right: auto;
   flex-wrap: wrap;
+  justify-content: space-around;
+  margin-right: auto;
+  margin-left: auto;
+  width: 75%;
 }
 
 .player-select__div {
@@ -57,7 +57,10 @@
 }
 
 .player__select {
-  margin-bottom: 0.5rem;
+  margin-bottom: .5rem;
+  border-radius: 4px;
+  padding: .5rem;
+  font-size: 1rem;
 }
 
 .leaderboard__list {
@@ -66,69 +69,63 @@
 }
 
 .button--green {
-  font-size: 1rem;
-  background-color: var(--theme-green, green);
-  color: #FFF;
   border-radius: 4px;
-  border: none;
-  padding: 0.5rem;
+  border: 0;
+  padding: .5rem;
+  background-color: var(--theme-green, #080);
+  font-size: 1rem;
+  color: #fff;
 }
 
 .button--green:hover {
-  background-color: #FFF;
-  color: var(--theme-green, green);
-  border: 1px solid var(--theme-green, green);
+  border: 1px solid var(--theme-green, #080);
+  background-color: #fff;
+  color: var(--theme-green, #080);
 }
 
 .button--blue {
-  font-size: 1rem;
-  background-color: var(--theme-blue, blue);
-  color: #FFF;
   border-radius: 4px;
-  border: none;
-  padding: 0.5rem;
+  border: 0;
+  padding: .5rem;
+  background-color: var(--theme-blue, #00f);
+  font-size: 1rem;
+  color: #fff;
 }
 
 .button--blue:hover {
-  background-color: #FFF;
-  color: var(--theme-blue, blue);
-  border: 1px solid var(--theme-blue, blue);
+  border: 1px solid var(--theme-blue, #00f);
+  background-color: #fff;
+  color: var(--theme-blue, #00f);
 }
 
 .button--red {
-  font-size: 1rem;
-  background-color: var(--theme-red, red);
-  color: #FFF;
   border-radius: 4px;
-  border: none;
-  padding: 0.5rem;
+  border: 0;
+  padding: .5rem;
+  background-color: var(--theme-red, #f00);
+  font-size: 1rem;
+  color: #fff;
 }
 
 .button--red:hover {
-  background-color: #FFF;
-  color: var(--theme-red, red);
-  border: 1px solid var(--theme-red, red);
+  border: 1px solid var(--theme-red, #f00);
+  background-color: #fff;
+  color: var(--theme-red, #f00);
 }
 
 .leaderboard__list-item--delete {
-  border: none;
+  border: 0;
   font-size: 1rem;
   font-weight: 800;
-  color: var(--theme-red, red)
+  color: var(--theme-red, #f00);
 }
 
 .leaderboard__list-item--delete:hover {
-  color: #FFF;
-  background-color: var(--theme-red, red);
   border-radius: 4px;
-}
-
-.player__select {
-  font-size: 1rem;
-  border-radius: 4px;
-  padding: 0.5rem;
+  background-color: var(--theme-red, #f00);
+  color: #fff;
 }
 
 .admin__button {
-  margin-top: 0.5rem;
+  margin-top: .5rem;
 }
