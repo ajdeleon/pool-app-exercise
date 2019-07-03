@@ -70,7 +70,7 @@
 
 .button--green {
   border-radius: 4px;
-  border: 0;
+  border: 1px solid var(--theme-green, #080);
   padding: .5rem;
   background-color: var(--theme-green, #080);
   font-size: 1rem;
@@ -85,7 +85,7 @@
 
 .button--blue {
   border-radius: 4px;
-  border: 0;
+  border: 1px solid var(--theme-blue, #00f);
   padding: .5rem;
   background-color: var(--theme-blue, #00f);
   font-size: 1rem;
@@ -100,7 +100,7 @@
 
 .button--red {
   border-radius: 4px;
-  border: 0;
+  border: 1px solid var(--theme-red, #f00);
   padding: .5rem;
   background-color: var(--theme-red, #f00);
   font-size: 1rem;
