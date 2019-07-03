@@ -54,7 +54,7 @@ const Leaderboard = (props) => {
         }
         {adminOpen && <button className="button--red" onClick={() => deleteAllPlayers()}>Delete All Players</button>}
       </section>
-      <section>
+      <section className="admin--button__section">
         <button className="admin__button button--blue" onClick={() => setAdminOpen(!adminOpen)}>{adminOpen ? 'Close Admin' : 'Admin Panel'}</button>
       </section>
     </>

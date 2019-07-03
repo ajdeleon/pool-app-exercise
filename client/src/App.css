@@ -126,6 +126,10 @@
   color: #fff;
 }
 
+.admin--button__section {
+  margin-bottom: 2rem;
+}
+
 .admin__button {
   margin-top: .5rem;
 }
