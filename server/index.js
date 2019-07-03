@@ -5,8 +5,11 @@ const cors = require('cors')
 const app = express()
 const port = 4000
 
-
-const corsOptions = { origin: 'http://localhost:3000' }
+let corsURL = 'http://localhost:3000'
+if (process.env.NODE_ENV === 'production') {
+  corsURL = 'https://ajdeleon.xyz'
+}
+const corsOptions = { origin: corsURL}
 app.use(cors(corsOptions))
 app.use(express.json())
  
