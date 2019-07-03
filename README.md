@@ -1,5 +1,29 @@
 # O3 Project
 
+## Running locally
+To run the project locally you'll need `node` and `npm`.
+
+Start by install dependencies in both `/client` and `/server` directories:
+```
+npm install
+```
+
+To start both the server and client in development mode you need to first install [concurrently](https://www.npmjs.com/package/concurrently). This helps to run multiple processes with one command while still giving you good console output if one process fails:
+```
+npm install -g concurrently
+```
+
+Then navigate to the `/client` directory and use:
+```
+npm run dev
+```
+
+Alternatively you can run each process indivually.
+
+From `/client`: `npm run start`
+
+From `/server`: `node index.js`
+
 ## Frontend
 
 The frontend for this project is bootstrapped with [Create-react-app](https://github.com/facebook/create-react-app). It uses the latest version of React in order enable hooks.
@@ -16,6 +40,13 @@ In addition to using `useState` in various components for storing local UI state
 ### CSS
 To keep things simple all css is in `App.css`. This is not normally the approach that I would take but it seemed to be the easiest solution for a small app like this. I used BEM naming structure for classes as outlined in an O3 style guide I found on github. Additionally I followed conventions outlined there as much as possible, including linting with `sass-lint` based on the [.sass-lint.yml](https://github.com/o3world/o3w-frontend-guidelines/blob/master/.sass-lint.yml) I also found on github, though I did not use sass for this particular project.
 
+### Tests
+Tests are run using enzyme to help with mounting and rendering React components, and Jest as a test runner.
+
+To run the tests navigate to the `/client` directory then run:
+```
+npm run test
+```
 
 ## Server
 
@@ -63,6 +94,11 @@ There is only one table with the following structure:
 |--------|-----------|
 | name   | text      |
 | wins   | integer   |
+
+### Tests
+There are no tests for the server currently. If I were to set them up I would use mocha and chai/chai-HTTP to test actual requests to the running server.
+
+[Here is an example](https://github.com/ajdeleon/indego_project/tree/master/api/test) of these types of tests in another project of mine.
 
 ## Deployment
 
